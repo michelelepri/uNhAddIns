@@ -36,10 +36,13 @@ namespace uNhAddIns.SessionEasier
          this.dependencyFiles = dependencyFiles;
       }
 
+<<<<<<< HEAD
       public string SerializedConfiguration
       {
          get { return serializedConfiguration; }
       }
+=======
+>>>>>>> dcb9380f740256607883b74d651ec24ee0c111f0
 
       private bool IsConfigurationFileValid
       {
