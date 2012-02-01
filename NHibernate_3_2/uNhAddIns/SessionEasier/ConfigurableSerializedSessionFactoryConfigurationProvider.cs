@@ -38,7 +38,10 @@ namespace uNhAddIns.SessionEasier
 
       public string SerializedConfiguration
       {
-         get { return serializedConfiguration; }
+         get
+         {
+            return serializedConfiguration;
+         }
       }
 
       private bool IsConfigurationFileValid
