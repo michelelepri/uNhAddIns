@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59233B1D-6DDE-4C05-A9E9-D0A1A8144112}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>uNhAddIns</RootNamespace>
+    <AssemblyName>uNhAddIns</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Debug\uNhAddIns.xml</DocumentationFile>
+    <NoWarn>1591;3001;3002;3003;3005</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\bin\Release\uNhAddIns.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\lib\NHibernate-3.2.0.GA-bin\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\lib\NHibernate-3.2.0.GA-bin\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audit\AbstractEntityAuditor.cs" />
+    <Compile Include="Audit\AuditableMetaData.cs" />
+    <Compile Include="Audit\AuditListener.cs" />
+    <Compile Include="Audit\IAuditor.cs" />
+    <Compile Include="Audit\IAuditorsFactory.cs" />
+    <Compile Include="Audit\IBusinessEvent.cs" />
+    <Compile Include="Audit\MappingAuditableMetaDataStore.cs" />
+    <Compile Include="Audit\IAuditableMetaData.cs" />
+    <Compile Include="Audit\IAuditableMetaDataStore.cs" />
+    <Compile Include="Audit\TriggerGenerator\AuditColumn.cs" />
+    <Compile Include="Audit\TriggerGenerator\AuditColumnSource.cs" />
+    <Compile Include="Audit\TriggerGenerator\AuditTable.cs" />
+    <Compile Include="Audit\TriggerGenerator\AuditTrigger.cs" />
+    <Compile Include="Audit\TriggerGenerator\ConfigurationExtensions.cs" />
+    <Compile Include="Audit\TriggerGenerator\Dialects\DialectMap.cs" />
+    <Compile Include="Audit\TriggerGenerator\NamingStrategy.cs" />
+    <Compile Include="Audit\TriggerGenerator\Dialects\ExtendedMsSql2008Dialect.cs" />
+    <Compile Include="Audit\TriggerGenerator\Dialects\ExtendedSQLiteDialect.cs" />
+    <Compile Include="Audit\TriggerGenerator\Dialects\IExtendedDialect.cs" />
+    <Compile Include="Audit\TriggerGenerator\IAuditColumnSource.cs" />
+    <Compile Include="Audit\TriggerGenerator\INamingStrategy.cs" />
+    <Compile Include="Audit\TriggerGenerator\Trigger.cs" />
+    <Compile Include="Audit\TriggerGenerator\TriggerActions.cs" />
+    <Compile Include="Audit\TriggerGenerator\TriggerAuditing.cs" />
+    <Compile Include="Cache\ConfigurationExtensions.cs" />
+    <Compile Include="Cache\ConfigurationImpl\QueryCacheFactoryConfiguration.cs" />
+    <Compile Include="Cache\ConfigurationImpl\TolerantQueryCacheConfExpressionBuilder.cs" />
+    <Compile Include="Cache\IQueryCacheFactoryConfiguration.cs" />
+    <Compile Include="Cache\IQueryCacheRegionResolver.cs" />
+    <Compile Include="Cache\ITolerantQueryCacheConfiguration.cs" />
+    <Compile Include="Cache\RegionQueryCacheFactory.cs" />
+    <Compile Include="Cache\TolerantQueryCache.cs" />
+    <Compile Include="Criterions\Localizable.cs" />
+    <Compile Include="Criterions\StartsWithExpression.cs" />
+    <Compile Include="DynQuery\GroupBy.cs" />
+    <Compile Include="Extensions\Enumerables.cs" />
+    <Compile Include="Extensions\ReflectionExtensions.cs" />
+    <Compile Include="Extensions\String.cs" />
+    <Compile Include="GenericImpl\PaginableDynQuery.cs" />
+    <Compile Include="Inflector\AbstractInflector.cs" />
+    <Compile Include="Inflector\AbstractRule.cs" />
+    <Compile Include="Inflector\CaseSensitiveRule.cs" />
+    <Compile Include="Inflector\DataDictionaryRuleApplier.cs" />
+    <Compile Include="Inflector\DefaultTableizeRuleApplier.cs" />
+    <Compile Include="Inflector\EnglishInflector.cs" />
+    <Compile Include="Inflector\EnglishNamingStrategy.cs" />
+    <Compile Include="Inflector\IInflector.cs" />
+    <Compile Include="Inflector\InflectorExtensions.cs" />
+    <Compile Include="Inflector\InflectorNamingStrategy.cs" />
+    <Compile Include="Inflector\IRuleApplier.cs" />
+    <Compile Include="Inflector\ItalianInflector.cs" />
+    <Compile Include="Inflector\ItalianNamingStrategy.cs" />
+    <Compile Include="Inflector\NounsRule.cs" />
+    <Compile Include="Inflector\IReplacementRule.cs" />
+    <Compile Include="Inflector\SpanishInflector.cs" />
+    <Compile Include="Inflector\SpanishNamingStrategy.cs" />
+    <Compile Include="Listeners\AutoDirtyCheck\ConfigurationExtensions.cs" />
+    <Compile Include="Listeners\AutoDirtyCheck\ResetReadOnlyCascadeAction.cs" />
+    <Compile Include="Listeners\AutoDirtyCheck\ResetReadOnlyEntityDeleteListener.cs" />
+    <Compile Include="Listeners\AutoDirtyCheck\ResetReadOnlyEntityListener.cs" />
+    <Compile Include="Listeners\AutoDirtyCheck\SetReadOnlyEntityPostLoadListener.cs" />
+    <Compile Include="Mapping\MappingExtensions.cs" />
+    <Compile Include="NhCoreExtensions.cs" />
+    <Compile Include="SessionEasier\AbstractConfigurationProvider.cs" />
+    <Compile Include="SessionEasier\BasicTransactionProtectionWrapper.cs" />
+    <Compile Include="SessionEasier\ConfigurableSerializedSessionFactoryConfigurationProvider.cs" />
+    <Compile Include="SessionEasier\ConfigurationEvents.cs" />
+    <Compile Include="SessionEasier\Conversations\AbstractConversation.cs" />
+    <Compile Include="SessionEasier\Conversations\AbstractConversationContainer.cs" />
+    <Compile Include="SessionEasier\Conversations\ConversationException.cs" />
+    <Compile Include="SessionEasier\Conversations\DefaultConversationFactory.cs" />
+    <Compile Include="SessionEasier\Conversations\IConversation.cs" />
+    <Compile Include="SessionEasier\Conversations\IConversationContainer.cs" />
+    <Compile Include="SessionEasier\Conversations\IConversationCreationInterceptor.cs" />
+    <Compile Include="SessionEasier\Conversations\IConversationFactory.cs" />
+    <Compile Include="SessionEasier\Conversations\IConversationsContainerAccessor.cs" />
+    <Compile Include="SessionEasier\Conversations\ISupportOutsidePersistentCall.cs" />
+    <Compile Include="SessionEasier\Conversations\NhConversation.cs" />
+    <Compile Include="SessionEasier\Conversations\NhConversationsContainerAccessor.cs" />
+    <Compile Include="SessionEasier\Conversations\ThreadLocalConversationalSessionContext.cs" />
+    <Compile Include="SessionEasier\Conversations\ThreadLocalConversationContainer.cs" />
+    <Compile Include="Criterions\Criterion.cs" />
+    <Compile Include="Criterions\EqOrNullExpression.cs" />
+    <Compile Include="DynQuery\DetachedDynQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\From.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\IDynClause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\IQueryPart.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\LogicalExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\OrderBy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\AbstractPaginableDynQuery.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\Select.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DynQuery\Where.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GenericImpl\PaginableCriteria.cs" />
+    <Compile Include="GenericImpl\PaginableQuery.cs" />
+    <Compile Include="GenericImpl\PaginableRowsCounterQuery.cs" />
+    <Compile Include="Pagination\AbstractPaginableCriteria.cs" />
+    <Compile Include="Pagination\AbstractPaginableQuery.cs" />
+    <Compile Include="Pagination\AbstractQueryRowsCounter.cs" />
+    <Compile Include="Pagination\BasePaginator.cs" />
+    <Compile Include="Pagination\IPageProvider.cs" />
+    <Compile Include="Pagination\IPaginable.cs" />
+    <Compile Include="Pagination\IPaginator.cs" />
+    <Compile Include="Pagination\IRowsCounter.cs" />
+    <Compile Include="Pagination\NamedQueryRowsCounter.cs" />
+    <Compile Include="Pagination\AbstractPaginableRowsCounterQuery.cs" />
+    <Compile Include="Pagination\Paginator.cs" />
+    <Compile Include="Pagination\QueryRowsCounter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\Cloner.cs" />
+    <Compile Include="SessionEasier\Contexts\CallSessionContext.cs" />
+    <Compile Include="SessionEasier\Commons.cs" />
+    <Compile Include="SessionEasier\Contexts\CurrentSessionContext.cs" />
+    <Compile Include="SessionEasier\Contexts\ThreadLocalSessionContext.cs" />
+    <Compile Include="SessionEasier\DefaultSessionFactoryConfigurationProvider.cs" />
+    <Compile Include="SessionEasier\ISessionWrapper.cs" />
+    <Compile Include="SessionEasier\DefaultMultiFactoryConfigurationProvider.cs" />
+    <Compile Include="SessionEasier\IConfigurationProvider.cs" />
+    <Compile Include="SessionEasier\ISessionFactoryProvider.cs" />
+    <Compile Include="SessionEasier\ISessionProxy.cs" />
+    <Compile Include="SessionEasier\MultiSessionFactoryProvider.cs" />
+    <Compile Include="SessionEasier\FakeSessionWrapper.cs" />
+    <Compile Include="SessionEasier\SerializedSessionFactoryConfigurationProvider.cs" />
+    <Compile Include="SessionEasier\SessionFactoryProvider.cs" />
+    <Compile Include="Transform\DelegateResultTransformer.cs" />
+    <Compile Include="Transform\PositionalToBeanResultTransformer.cs" />
+    <Compile Include="UserTypes\GenericWellKnownInstanceType.cs" />
+    <Compile Include="UserTypes\LocalizablePropertyType.cs" />
+    <Compile Include="UserTypes\PropertiesNamesType.cs" />
+    <Compile Include="UserTypes\TrimString.cs" />
+    <Compile Include="UserTypes\EncryptedString.cs" />
+    <Compile Include="UserTypes\uNHAddinsEncryptor.cs" />
+    <Compile Include="UserTypes\IEncryptor.cs" />
+    <Compile Include="UserTypes\UpperString.cs" />
+    <Compile Include="UserTypes\WellKnownInstanceType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SessionEasier\Conversations\ConversationDiagram.cd" />
+    <None Include="SessionEasier\Conversations\ConversationImplDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetFileName) "$(SolutionDir)Lib"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
