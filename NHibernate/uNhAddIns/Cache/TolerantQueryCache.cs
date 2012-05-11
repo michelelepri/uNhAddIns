@@ -27,7 +27,7 @@ namespace uNhAddIns.Cache
 			get { return toleratedSpaces; }
 		}
 
-		protected override bool IsUpToDate(ISet<string> spaces, long timestamp)
+		protected override bool IsUpToDate(Iesi.Collections.Generic.ISet<string> spaces, long timestamp)
 		{
 			return IsTolerated(spaces) || base.IsUpToDate(spaces, timestamp);
 		}
